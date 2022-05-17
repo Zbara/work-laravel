@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/')->name('main')->uses('App\Http\Controllers\MainController@index');
+Route::post('/model')->name('model')->uses('App\Http\Controllers\MainController@model');
+Route::post('/result')->name('result')->uses('App\Http\Controllers\MainController@result');
